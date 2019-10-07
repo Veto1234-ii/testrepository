@@ -4,19 +4,20 @@ import matplotlib.pyplot as plt
 import cv2
 
 
-N=50
-k=5
+N=800
+k=3
 X1 = np.array([(random.uniform(-1,1), random.uniform(-1,1)) for i in range(N)])
 
 
-z1=np.zeros( ( 10,10 ) )
-X1=np.array(X1).reshape( ( 10,10 ) ) 
+z1=np.zeros( ( 40,40 ) )
+X1=np.array(X1).reshape( ( 40,40 ) ) 
 print(np.shape(X1))
-for i in range(10):
-    for j in range(10):
+for i in range(40):
+    for j in range(40):
         l=X1[i,j]
         z1[i,j]=l
-#plt.imshow(z1,cmap=plt.cm.bone)        
+        
+               
         
 n= float(N)/k# среднее, все точки делить на кол-во кластеров, среднее кол-во точек для одного кластера
 X=[]
@@ -33,14 +34,14 @@ for i in range(k):
             x.append([a,b])
     X.extend(x)# удлиняет список, добавлят элементы, конкретно a и b, а не [a,b]
     
-z=np.zeros( ( 10,10 ) ) 
+z=np.zeros( ( 40,40 ) ) 
 
 X = np.array(X)[:N]
 
-X=np.array(X).reshape( ( 10,10 ) ) 
+X=np.array(X).reshape( ( 40,40 ) ) 
 print(np.shape(X))
-for i in range(10):
-    for j in range(10):
+for i in range(40):
+    for j in range(40):
         k=X[i,j]
         z[i,j]=k
 
